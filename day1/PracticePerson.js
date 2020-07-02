@@ -4,9 +4,6 @@ var person = {
     tags: ['js', 'web', 'mobile'],
     city: 'Beijing',
     hasCar: true,
-    zipcod: null,
-
-}
-alert(name);
-person.age;
-person.zipcod;
+    zipcod: null
+};
+console.log(person.name);
