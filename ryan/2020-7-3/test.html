@@ -1,0 +1,31 @@
+<script type="text/javascript">
+'use strict';
+
+document.write("sss");
+var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
+
+m.forEach(function(value, key, mp){
+    console.log(value);
+});
+
+var oldAlert = console.log;
+var count = 0;
+
+console.log = function(){
+    count++;
+    return oldAlert.apply(null, arguments);
+}
+
+console.log("test alert message");
+console.log(count);
+
+
+function area_of_circle(r, pi){
+    console.log(arguments.length);
+}
+
+area_of_circle(2);
+
+area_of_circle(2, 3);
+
+</script>
