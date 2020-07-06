@@ -1,0 +1,22 @@
+<script>
+
+    // map 遍历数组，生成新的数组
+    let ar = [1, 2, 3, 4, 5, 6, 7];
+    r = ar.map(function (e, k) {
+        return String(e * k);
+    })
+    console.log(r)
+
+    // filter 遍历数组，过滤数组
+    let arr = [2, 6, 7, 11, 13, 27, 31, 32];
+
+    rr = arr.filter(function (e) {
+        for(let i = 2; i < e / 2 + 1; i++){
+            if (e % i === 0){   // 三等号与俩等号（三等好判断值，变量类型，俩等号仅判断值）
+                return true;
+            }
+        }
+        return false;
+    })
+    console.log(rr);
+</script>
