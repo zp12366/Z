@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function newRunner() {
+        let distance = 0;
+        return {
+            getDistance: function () {
+                return distance;
+            },
+            run: function (d) {
+                distance += d;
+            }
+        }
+    }
+
+    var runner = newRunner();
+    runner.run(20);
+    runner.run(3);
+    runner.run(6);
+    console.log("runner run distance is : " + runner.getDistance())
+
+    function newRunner2(){
+        let distance = 0;
+        return {
+            getDistance: function () {
+                return distance;
+            },
+            run: d => distance += d
+        }
+    }
+
+    var runner2 = newRunner2();
+    runner2.run(10);
+    runner2.run(3);
+    runner2.run(6);
+    console.log("runner2 run distance is : " + runner2.getDistance());
+</script>
+</body>
+</html>
