@@ -8,4 +8,4 @@ if (area_of_circle(2 ) && area_of_circle(2 ,3.14)) {
     console.log(s)
 }else {
     console.log(s)
-}
+}it
