@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    function NewDateFormat() {
+        let format = "";
+        return {
+            setFormat: function (formatS) {
+                format = formatS;
+            },
+            format2String: function (d) {
+                let date2String = format;
+                date2String = date2String.replace('y', d.getFullYear());
+                m = d.getMonth() + 1;
+                date2String = date2String.replace('m', m < 10 ? "0" + m : m);
+                dd = d.getDate();
+                date2String = date2String.replace('d', dd < 10 ? "0" + dd : dd);
+                date2String = date2String.replace('H', d.getHours());
+                date2String = date2String.replace('i', d.getMinutes());
+                date2String = date2String.replace('s', d.getSeconds());
+                return date2String;
+            }
+        }
+    }
+
+    let df = NewDateFormat();
+    df.setFormat("y-m-d H:i:s");
+    console.log(df.format2String(new Date(Date.now())));
+
+    df.setFormat("y/m/d H:i:s");
+    console.log(df.format2String(new Date(Date.now())));
+
+    var School = {
+        name: "JavaScript 大学",
+        location: "chang-sha",
+    }
+
+    var skills = ['javaScript', 'html', 'css', 'java', 'sql Server'];
+
+    var Zp = {
+        age: 20,
+        gender: true,
+        grade: null,
+        name: "朱鹏",
+        school: School,
+        skills: skills
+    }
+
+    var jsonS = JSON.stringify(Zp);
+
+    document.write(jsonS);
+
+    var jsonO = JSON.parse(jsonS);
+
+    console.log("age is : " + (jsonO.age & jsonO.age))
+
+    console.log("wing is :" + (jsonO.wing & jsonO.wing))
+</script>
+</html>
